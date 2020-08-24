@@ -115,3 +115,21 @@ npm install
 ````
 npm install --save vue vue-router
 ````
+
+12. Install Vue and vuew router
+````
+ npm install bootstrap-sass --save-dev
+````
+
+### Dummy Data
+
+1. Open Tinker
+
+````
+php artisan tinker
+````
+    
+2. User factory script
+````
+factory(App\User::class, 3)->create();                                                                                                                   
+````
