@@ -109,3 +109,9 @@ php artisan passport:install
 10. Install Node modules
 ````
 npm install
+````
+
+11. Install Vue and vuew router
+````
+npm install --save vue vue-router
+````
