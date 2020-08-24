@@ -15,7 +15,13 @@
 </head>
 <body>
     <div id="app">
-        
+        <div class="container">
+            <div>
+                <div class="col-xs-12 col-md-12">
+                    <router-view></router-view>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->

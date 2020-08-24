@@ -116,9 +116,10 @@ npm install
 npm install --save vue vue-router
 ````
 
-12. Install Vue and vuew router
+12. Install bootstrap-sass and vuejs-paginate
 ````
  npm install bootstrap-sass --save-dev
+ npm install vuejs-paginate --save
 ````
 
 ### Dummy Data
