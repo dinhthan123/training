@@ -59,3 +59,53 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+### Installation
+
+1. Clone repo
+
+2. Change to directory
+
+````
+cd PATH_PROJECT_NAME
+````   
+
+3. Copy .env file
+
+```
+cp .env.example .env
+```
+
+4. Modify `DB_*` value in `.env` with your database config.
+````
+php artisan config:cache
+````
+
+5. Generate application key:
+
+````
+php artisan key:generate
+````
+
+6. Tích hợp Laravel passport vào dự án Laravel
+````
+composer require laravel/passport
+````
+
+7. Publish migrations Laravel passport
+````
+php artisan vendor:publish --tag=passport-migration
+````
+
+8. Migrate
+````
+php artisan migrate
+````
+9. Migrate
+````
+php artisan passport:install
+````
+
+10. Install Node modules
+````
+npm install
