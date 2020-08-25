@@ -44,4 +44,70 @@ class UserService implements UserServiceInterface
 
         return $user;
     }
+
+    public function update($request, $id)
+    {
+        $data = $request->all();
+        unset($data['avatar']);
+
+        try {
+            $user = $this->user->findOrFail($id);
+
+            return $user->update($data);
+        } catch(Exception $e) {
+            echo "Message: " . $e->getMessage();
+        }
+    }
+
+    public function insert($request)
+    {
+        $data = $request->all();
+
+        try {
+            return $this->user->create($data);
+        } catch(Exception $e) {
+            echo "Message: " . $e->getMessage();
+        }
+    }
+
+    public function delete($id)
+    {
+        try {
+            $user = $this->user->findOrFail($id);
+
+            return $user->delete();
+        } catch(Exception $e) {
+            echo "Message: " . $e->getMessage();
+        }
+    }
+
+    public function genders()
+    {
+        return $this->user->genders();
+    }
+
+    public function departments()
+    {
+        return $this->user->departments();
+    }
+
+    public function upload($request)
+    {
+        $nameAvatar = '';
+        if ($request->id) {
+            $id = $request->id;
+            // upload image
+            if (!empty($request->image)) {
+                $nameAvatar = uploadImage($request->image, $id);
+                try {
+                    $user = $this->find($id);
+                    $user->update(['avatar' => $nameAvatar]);
+                } catch(Exception $e) {
+                    echo "Message: " . $e->getMessage();
+                }
+            }
+        }
+
+        return $nameAvatar;
+    }
 }

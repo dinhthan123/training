@@ -28,6 +28,8 @@
     "dependencies": {
         "@babel/core": "^7.11.4",
         "@babel/preset-env": "^7.11.0",
-        "vue": "^2.6.12"
+        "vue": "^2.6.12",
+        "vue-loading-overlay": "^3.3.3",
+        "vuejs-datepicker": "^1.6.2"
     }
 }

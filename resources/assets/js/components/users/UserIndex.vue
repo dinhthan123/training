@@ -86,12 +86,6 @@
         },
         methods: {
             listUser(page = 1) {
-                let token = localStorage.getItem('token');
-                let name = localStorage.getItem('user');
-
-                axios.defaults.headers.common['Content-Type'] = 'application/json';
-                axios.defaults.headers.common['Authorization'] = name + token;
-
                 var app = this;
                 axios.get(app.endpoint + page, {params:{keywords: this.keywords}})
                     .then(function (resp) {
@@ -115,13 +109,6 @@
                 }
             }
         },
-        // beforeRouteEnter (to, from, next) {
-        //     if (!localStorage.getItem('token')) {
-        //         return next('login');
-        //     }
-            
-        //     next();
-        // }
     }
 </script>
 

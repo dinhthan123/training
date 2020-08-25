@@ -14,3 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'UserController@index');
+Route::get('/{any}', function () {
+    return view('users.index');
+})->where('any', '.*');

@@ -21,4 +21,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => '/v1', 'namespace' => 'Api', 'as' => 'api.'], function () {
     // Users
     Route::get('users', 'UserController@index')->name('users.index');
+    Route::post('users', 'UserController@store')->name('users.store');
+    Route::get('users/show/{id}', 'UserController@show')->name('users.show');
+    Route::patch('users/update/{id}', 'UserController@update')->name('users.update');
+    Route::delete('users/{id}', 'UserController@destroy')->name('users.destroy');
+    // gender
+    Route::get('users/gender', 'UserController@getGenders')->name('gender');
+    // department
+    Route::get('users/department', 'UserController@getDepartments')->name('department');
+    // upload image
+    Route::patch('upload/avatar', 'UserController@uploadAvatar')->name('upload-avatar');
 });

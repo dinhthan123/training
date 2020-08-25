@@ -68,6 +68,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ````
 cd PATH_PROJECT_NAME
+
+composer install
 ````   
 
 3. Copy .env file
@@ -111,15 +113,14 @@ php artisan passport:install
 npm install
 ````
 
-11. Install Vue and vuew router
+11. Install Vue and vuew router, bootstrap-sass, vuejs-paginate, vuejs-datepicker
 ````
 npm install --save vue vue-router
-````
-
-12. Install bootstrap-sass and vuejs-paginate
-````
- npm install bootstrap-sass --save-dev
- npm install vuejs-paginate --save
+npm install bootstrap-sass --save-dev
+npm install vuejs-paginate --save
+npm install --save-dev @fortawesome/fontawesome-free
+npm install vuejs-datepicker --save
+npm install vue-loading-overlay
 ````
 
 ### Dummy Data
@@ -132,5 +133,5 @@ php artisan tinker
     
 2. User factory script
 ````
-factory(App\User::class, 3)->create();                                                                                                                   
+factory(App\User::class, 12)->create();                                                                                                                   
 ````
