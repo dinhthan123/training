@@ -75,7 +75,7 @@
                 endpoint: '/api/v1/users?page='
             }
         },
-        mounted() {
+        created() {
             this.listUser();
             // console.log(document.getElementById('app').innerHTML)
         },
